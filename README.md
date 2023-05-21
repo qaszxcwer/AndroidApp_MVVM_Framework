@@ -1,0 +1,2 @@
+# AndroidApp_MVVM_Framework
+一个基于Kotlin+MVVM+Retrofit的原生APP开发框架
