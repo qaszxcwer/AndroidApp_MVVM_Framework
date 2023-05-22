@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
+import androidx.core.view.WindowInsetsCompat
 import com.example.mvvmframe.databinding.ActivityMainBinding
 import person.qaszxcwer.appbaseframe.activity.BaseVMActivity
+import person.qaszxcwer.appbaseframe.extend.immerse
 import person.qaszxcwer.appbaseframe.utils.DeviceUtils
 import person.qaszxcwer.appbaseframe.utils.LogUtils
 import java.lang.ref.WeakReference
@@ -39,6 +41,7 @@ class TestActivity: BaseVMActivity<ActivityMainBinding, TestViewModel>() {
     private val handler = TestHandler(this)
 
     override fun initView() {
+        immerse(type = WindowInsetsCompat.Type.systemBars(),statusBarBlack = true, navigationIsBlack = true)
         handler.sendEmptyMessageDelayed(1, 10000)
         binding.txtTest.setOnClickListener() {
             TestRotatedFullScreenDialog().show(supportFragmentManager)

@@ -57,5 +57,33 @@ class DeviceUtils {
             }
             return size
         }
+
+        /**
+         * 获得状态栏高度
+         */
+        @JvmStatic
+        fun getStatusBarHeight(context: Context): Int {
+            var statusBarHeight = 0
+            val resourceId =
+                context.resources.getIdentifier("status_bar_height", "dimen", "android")
+            if (resourceId > 0) {
+                statusBarHeight = context.resources.getDimensionPixelSize(resourceId)
+            }
+            return statusBarHeight
+        }
+
+        /**
+         * 获得导航栏高度
+         */
+        @JvmStatic
+        fun getNavigationBarHeight(context: Context): Int {
+            var result = 0
+            val resourceId =
+                context.resources.getIdentifier("navigation_bar_height", "dimen", "android")
+            if (resourceId > 0) {
+                result = context.resources.getDimensionPixelSize(resourceId)
+            }
+            return result
+        }
     }
 }

@@ -2,6 +2,7 @@ package com.example.mvvmframe.zTest
 
 import android.view.LayoutInflater
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 import com.example.mvvmframe.databinding.FragmentMain2Binding
 import person.qaszxcwer.appbaseframe.fragment.BaseFragment
 import person.qaszxcwer.appbaseframe.fragment.BaseVMFragment
@@ -28,6 +29,14 @@ class TestFragmentVM: BaseVMFragment<TestViewModel, FragmentMain2Binding>() {
     override fun initView() {
         LogUtils.i("TestFragment2")
         binding.txtTest.setText("2")
+        Glide.with(this)
+            .load("https://fanyi.youdao.com/img/logo.6ed1c44b.png")
+            .centerCrop()
+            .into(binding.imgTest)
+        Glide.with(this)
+            .load("https://fanyi.youdao.com/img/logo.6ed1c44b.png")
+            .centerCrop()
+            .into(binding.imgTest2)
     }
 
     override fun initData() {

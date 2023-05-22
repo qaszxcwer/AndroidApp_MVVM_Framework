@@ -2,15 +2,17 @@ package com.example.mvvmframe
 
 import android.content.Intent
 import android.widget.TextView
+import androidx.core.view.WindowInsetsCompat
 import com.example.mvvmframe.databinding.ActivityMainBinding
 import com.example.mvvmframe.zTest.TestActivity
 import com.example.mvvmframe.zTest.TestFragment1
 import com.example.mvvmframe.zTest.TestFragmentVM
 import person.qaszxcwer.appbaseframe.activity.BaseActivity
+import person.qaszxcwer.appbaseframe.extend.immerse
 import person.qaszxcwer.appbaseframe.extend.notNull
 import person.qaszxcwer.appbaseframe.utils.LogUtils
 
-// todo appjoint、jsEvent处理、snackBar、统一沉浸式
+// todo appjoint、jsEvent处理、snackBar
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     private val txtTest: TextView by lazy { findViewById<TextView>(R.id.txtTest) }
 
@@ -22,6 +24,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun initView() {
+        immerse(type = WindowInsetsCompat.Type.systemBars(),statusBarBlack = true, navigationIsBlack = true)
         notNull(this, this) {
             LogUtils.i("notNull不为空")
         }
@@ -35,7 +38,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun initData() {
     }
 
-    private var first: Boolean = true
+    private var first: Boolean = false
     private val fragment1 by lazy { TestFragment1() }
     private val fragment2 by lazy { TestFragmentVM() }
 
