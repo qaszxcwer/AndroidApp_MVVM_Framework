@@ -6,12 +6,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import person.qaszxcwer.appbaseframe.dialog.loading.UsualLoadingDialogUtil
-import person.qaszxcwer.appbaseframe.utils.LogUtils
 
 /**
  *
  * date: 2023/5/6
- * author: GuRongLin
+ * 
  */
 abstract class BaseActivity<T: ViewBinding> : AppCompatActivity() {
     protected lateinit var binding: T
@@ -44,7 +43,6 @@ abstract class BaseActivity<T: ViewBinding> : AppCompatActivity() {
     protected abstract fun initData()
 
     protected fun showLoading() {
-        LogUtils.w("show UsualDialog")
         UsualLoadingDialogUtil.instance.show(supportFragmentManager)
     }
 

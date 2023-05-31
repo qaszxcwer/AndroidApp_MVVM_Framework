@@ -6,7 +6,7 @@ import person.qaszxcwer.appbaseframe.BuildConfig
 /**
  *
  * date: 2023/5/9
- * author: GuRongLin
+ * 
  */
 class LogUtils {
     companion object {

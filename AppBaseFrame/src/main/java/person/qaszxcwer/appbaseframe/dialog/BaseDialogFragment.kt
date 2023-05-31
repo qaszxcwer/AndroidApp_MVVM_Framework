@@ -8,40 +8,42 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
+import androidx.viewbinding.ViewBinding
 import person.qaszxcwer.appbaseframe.R
 
 /**
  *
  * date: 2023/5/9
- * author: GuRongLin
+ * 
  * 普通的对话框，左右充满，高度适应内容，上下默认居中<BR>
  * 实现getLayoutId方法即可创建UI
  */
-abstract class BaseDialogFragment: DialogFragment() {
-    open val defaultGravity: Int = Gravity.CENTER
-    open val cancelAble:Boolean = true
+abstract class BaseDialogFragment<T: ViewBinding>: DialogFragment() {
+    protected open val defaultGravity: Int = Gravity.CENTER
 
     init {
         setStyle(STYLE_NORMAL, R.style.normalDialog)
-        isCancelable = cancelAble
     }
+
+    protected lateinit var binding: T
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(getLayoutId(), null)
+        binding = getViewBinding(inflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         changeDialogWindowAttrs()
-        initView(view)
+        initView()
         initData()
     }
 
-    internal open fun changeDialogWindowAttrs() {
+    protected open fun changeDialogWindowAttrs() {
         val window = dialog?.window
         window?.let {
             when(val animation = getAnimationStyle()) {
@@ -72,13 +74,13 @@ abstract class BaseDialogFragment: DialogFragment() {
         super.show(manager, javaClass.simpleName)
     }
 
-    abstract fun getLayoutId(): Int
+    protected abstract fun getViewBinding(inflater: LayoutInflater): T
 
     protected open fun getAnimationStyle(): Int {
         return 0
     }
 
-    abstract fun initView(view: View)
+    protected abstract fun initView()
 
-    abstract fun initData()
+    protected abstract fun initData()
 }

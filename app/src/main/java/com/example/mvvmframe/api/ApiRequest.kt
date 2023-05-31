@@ -1,7 +1,7 @@
 package com.example.mvvmframe.api
 
-import com.example.mvvmframe.zTest.IpBean
-import com.example.mvvmframe.zTest.NameItem
+import com.example.mvvmframe.zTestBean.IpBean
+import com.example.mvvmframe.zTestBean.NameItem
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Headers
@@ -11,7 +11,7 @@ import retrofit2.http.Path
 /**
  *
  * date: 2023/3/28
- * author: GuRongLin
+ * 
  */
 interface ApiRequest {
     @Headers("Content-Type: application/json", "Accept: application/json")

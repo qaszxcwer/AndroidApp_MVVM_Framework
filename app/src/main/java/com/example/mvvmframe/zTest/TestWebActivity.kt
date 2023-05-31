@@ -1,18 +1,15 @@
 package com.example.mvvmframe.zTest
 
 import android.content.Intent
-import android.os.Bundle
 import android.text.TextUtils
-import android.view.LayoutInflater
 import android.webkit.WebResourceRequest
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
-import com.example.mvvmframe.databinding.FragmentMain1Binding
+import com.example.mvvmframe.databinding.ActivityTestWebBinding
+import person.qaszxcwer.appbaseframe.activity.BaseActivity
 import person.qaszxcwer.appbaseframe.extend.immerse
-import person.qaszxcwer.appbaseframe.fragment.BaseFragment
 import person.qaszxcwer.appbaseframe.hybrid.HybridEventHandlerManager
 import person.qaszxcwer.appbaseframe.hybrid.IHybrid
 import person.qaszxcwer.appbaseframe.utils.LogUtils
@@ -20,23 +17,27 @@ import person.qaszxcwer.appbaseframe.utils.ToastUtils
 
 /**
  *
- * date: 2023/5/12
+ * date: 2023/5/6
  * 
+ * 一个简单的web页面，模拟一下H5和原生互相调用的场景
  */
-class TestFragment1: BaseFragment<FragmentMain1Binding>(), IHybrid {
-    override fun getViewBinding(inflater: LayoutInflater): FragmentMain1Binding {
-        return FragmentMain1Binding.inflate(inflater)
+class TestWebActivity: BaseActivity<ActivityTestWebBinding>(), IHybrid {
+
+    override fun getViewBinding(): ActivityTestWebBinding {
+        return ActivityTestWebBinding.inflate(layoutInflater)
     }
 
-    private val jsInterface by lazy {
-        TestJsInterface(activity = mContext as AppCompatActivity, fragment = this)
-    }
-
-    override fun initView() {
+    override fun initParams(intent: Intent) {
         with(HybridEventHandlerManager) {
             addHandler(H5EventHandler_A())
             addHandler(H5EventHandler_B())
         }
+    }
+
+    private val jsInterface = TestJsInterface(this)
+
+    override fun initView() {
+        immerse()
         binding.txtA.setOnClickListener{
             sendH5Msg("A")
         }

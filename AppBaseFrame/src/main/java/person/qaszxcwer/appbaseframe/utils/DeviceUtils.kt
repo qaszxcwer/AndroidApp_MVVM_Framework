@@ -8,7 +8,7 @@ import android.view.WindowManager
 /**
  *
  * date: 2023/5/10
- * author: GuRongLin
+ * 
  */
 class DeviceUtils {
     companion object {

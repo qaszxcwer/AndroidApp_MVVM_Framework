@@ -15,7 +15,7 @@ import java.lang.ref.WeakReference
 /**
  *
  * date: 2023/5/6
- * author: GuRongLin
+ * 
  */
 class TestActivity: BaseVMActivity<ActivityMainBinding, TestViewModel>() {
 

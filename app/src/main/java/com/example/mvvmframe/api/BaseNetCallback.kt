@@ -1,5 +1,6 @@
 package com.example.mvvmframe.api
 
+import android.util.Log
 import person.qaszxcwer.appbaseframe.dialog.loading.UsualLoadingDialogUtil
 import person.qaszxcwer.appbaseframe.net.ApiException
 import person.qaszxcwer.appbaseframe.utils.LogUtils
@@ -12,7 +13,7 @@ import retrofit2.Response
 /**
  *
  * date: 2023/5/9
- * author: GuRongLin
+ * 
  * 统一处理接口请求的出错情况，可根据自己的业务逻辑修改
  */
 abstract class BaseNetCallback<T>: Callback<BaseResponse<T>> {
@@ -72,5 +73,5 @@ abstract class BaseNetCallback<T>: Callback<BaseResponse<T>> {
         return false
     }
 
-    abstract fun onSuccess(data: T)
+    protected abstract fun onSuccess(data: T)
 }

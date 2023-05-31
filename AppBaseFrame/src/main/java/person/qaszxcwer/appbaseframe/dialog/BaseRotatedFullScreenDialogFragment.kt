@@ -10,21 +10,19 @@ import android.view.Window
 import android.view.animation.DecelerateInterpolator
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.viewbinding.ViewBinding
 import person.qaszxcwer.appbaseframe.R
 import person.qaszxcwer.appbaseframe.utils.DeviceUtils
 
 /**
  *
  * date: 2023/5/9
- * author: GuRongLin
+ * 
  * 可以旋转的全屏对话框样式，然后如果不需要全屏就在xml里面控制自己高度即可
  */
-abstract class BaseRotatedFullScreenDialogFragment: BaseDialogFragment() {
+abstract class BaseRotatedFullScreenDialogFragment<T: ViewBinding>: BaseDialogFragment<T>() {
     final override val defaultGravity: Int
         get() = Gravity.CENTER
-
-    override val cancelAble: Boolean
-        get() = false
 
     init {
         setStyle(STYLE_NORMAL, R.style.fullScreenDialog)

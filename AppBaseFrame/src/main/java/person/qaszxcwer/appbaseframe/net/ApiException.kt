@@ -3,7 +3,7 @@ package person.qaszxcwer.appbaseframe.net
 /**
  *
  * date: 2023/5/9
- * author: GuRongLin
+ * 
  * 自定义的网络请求Exception
  */
 class ApiException(errorCode: Int, errorMessage: String):RuntimeException(errorMessage) {

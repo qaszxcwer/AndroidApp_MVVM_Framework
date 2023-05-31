@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 /**
  *
  * date: 2023/5/12
- * author: GuRongLin
+ * 
  * 借助原子操作实现多线程(主要指网络请求)工作时的稳定性
  */
 class SingleLiveData<T> : MutableLiveData<T?>() {

@@ -12,7 +12,7 @@ import person.qaszxcwer.appbaseframe.dialog.loading.UsualLoadingDialogUtil
 /**
  *
  * date: 2023/5/12
- * author: GuRongLin
+ * 
  */
 abstract class BaseFragment<T: ViewBinding>: Fragment() {
     protected lateinit var mContext: Context

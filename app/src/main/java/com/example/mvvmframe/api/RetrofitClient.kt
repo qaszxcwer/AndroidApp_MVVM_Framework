@@ -2,12 +2,12 @@ package com.example.mvvmframe.api
 
 
 import android.content.Context
+import com.example.mvvmframe.BuildConfig
 import io.reactivex.schedulers.Schedulers
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import person.qaszxcwer.appbaseframe.BaseApplication
-import person.qaszxcwer.appbaseframe.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -17,11 +17,11 @@ import java.util.concurrent.TimeUnit
 /**
  *
  * date: 2023/5/5
- * author: GuRongLin
+ * 
  */
 class RetrofitClient {
     companion object {
-        private const val BaseUrl = "https://apis.juhe.cn/" // todo 替换服务器地址
+        private const val BaseUrl = BuildConfig.API_HOST // todo 替换服务器地址
         private const val CacheMaxSize: Long = 1024 * 1024 * 50 // 50MB的网络缓存大小
         private const val CacheFileName = "OkHttpCache"
         private const val TimeOutSeconds: Long = 60

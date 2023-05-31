@@ -10,7 +10,7 @@ import person.qaszxcwer.appbaseframe.utils.DeviceUtils
  * date: 2023/5/22
  * 
  */
-class StatusBarView : View {
+class NavigationBarView : View {
     private var mStatusBarHeight = 0
 
     constructor(context: Context?) : this(context, null)
@@ -21,7 +21,7 @@ class StatusBarView : View {
         defStyleAttr
     ) {
         context?.let {
-            mStatusBarHeight = DeviceUtils.getStatusBarHeight(context)
+            mStatusBarHeight = DeviceUtils.getNavigationBarHeight(context)
         }
     }
 

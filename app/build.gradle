@@ -4,6 +4,24 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file("KeyTest.jks")
+            storePassword "123456"
+            keyAlias "key0"
+            keyPassword "123456"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        release {
+            storeFile file("KeyTest.jks")
+            storePassword "123456"
+            keyAlias "key0"
+            keyPassword "123456"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
     compileSdk 32
 
     defaultConfig {
@@ -21,10 +39,42 @@ android {
         enabled = true
     }
 
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                // 修改打包的文件名
+                outputFileName = "AppFrame_${variant.name}_v${variant.versionName}_${variant.versionCode}.apk"
+            }
+    }
+
+    // 共有1个渠道维度
+    // server 以服务器地址为区分依据，用来划分测试和正式环境
+    flavorDimensionList.add("server")
+
+    productFlavors {
+        dev {
+            dimension "server"
+            buildConfigField("String", 'API_HOST', '"https://apis.juhe.cn/"')
+        }
+        prod {
+            dimension "server"
+            buildConfigField("String", 'API_HOST', '"https://apis.juhe.cn/"')
+        }
+    }
+
     buildTypes {
+        debug {
+            minifyEnabled false  //  代码混淆
+            shrinkResources false // 移除无用的resource文件
+            zipAlignEnabled true // 开启ZipAlign优化
+            signingConfig signingConfigs.debug   //配置签名
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true  //  代码混淆
+            shrinkResources true // 移除无用的resource文件
+            zipAlignEnabled true // 开启ZipAlign优化
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release   //配置签名
         }
     }
     compileOptions {

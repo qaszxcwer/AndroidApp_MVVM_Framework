@@ -7,7 +7,7 @@ import person.qaszxcwer.appbaseframe.vm.BaseViewModel
 /**
  *
  * date: 2023/5/6
- * author: GuRongLin
+ * 
  */
 abstract class BaseVMActivity<T: ViewBinding, VM: BaseViewModel> : BaseActivity<T>() {
     protected lateinit var viewModel: VM

@@ -6,6 +6,8 @@ import androidx.lifecycle.Observer
 import com.example.mvvmframe.api.BaseListResponse
 import com.example.mvvmframe.api.BaseNetCallback
 import com.example.mvvmframe.api.RetrofitClient
+import com.example.mvvmframe.zTestBean.IpBean
+import com.example.mvvmframe.zTestBean.NameItem
 import person.qaszxcwer.appbaseframe.vm.BaseViewModel
 import kotlin.collections.HashMap
 import kotlin.collections.set
@@ -13,7 +15,7 @@ import kotlin.collections.set
 /**
  *
  * date: 2023/5/6
- * author: GuRongLin
+ * 
  */
 class TestViewModel: BaseViewModel() {
     companion object {

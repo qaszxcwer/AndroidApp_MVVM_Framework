@@ -7,13 +7,14 @@ import com.example.mvvmframe.databinding.ActivityMainBinding
 import com.example.mvvmframe.zTest.TestActivity
 import com.example.mvvmframe.zTest.TestFragment1
 import com.example.mvvmframe.zTest.TestFragmentVM
+import com.example.mvvmframe.zTest.TestWebActivity
 import person.qaszxcwer.appbaseframe.activity.BaseActivity
 import person.qaszxcwer.appbaseframe.extend.immerse
 import person.qaszxcwer.appbaseframe.extend.notNull
 import person.qaszxcwer.appbaseframe.utils.LogUtils
 
-// todo appjoint、jsEvent处理、snackBar
 class MainActivity : BaseActivity<ActivityMainBinding>() {
+    // by lazy形式示例，可用binding.txtTest代替
     private val txtTest: TextView by lazy { findViewById<TextView>(R.id.txtTest) }
 
     override fun getViewBinding(): ActivityMainBinding {
@@ -29,8 +30,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             LogUtils.i("notNull不为空")
         }
         changeFragment()
+        txtTest.text = BuildConfig.FLAVOR
         txtTest.setOnClickListener {
-            startActivity(Intent(mContext, TestActivity::class.java))
+//            startActivity(Intent(mContext, TestActivity::class.java))
+            startActivity(Intent(mContext, TestWebActivity::class.java))
 //            changeFragment()
         }
     }
@@ -38,7 +41,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun initData() {
     }
 
-    private var first: Boolean = false
+    private var first: Boolean = true
     private val fragment1 by lazy { TestFragment1() }
     private val fragment2 by lazy { TestFragmentVM() }
 

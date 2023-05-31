@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager
 /**
  *
  * date: 2023/5/11
- * author: GuRongLin
+ * 
  */
 class UsualLoadingDialogUtil {
     companion object {

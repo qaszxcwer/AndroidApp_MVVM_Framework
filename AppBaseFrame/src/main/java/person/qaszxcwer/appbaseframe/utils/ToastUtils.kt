@@ -6,7 +6,7 @@ import person.qaszxcwer.appbaseframe.BaseApplication
 /**
  *
  * date: 2023/5/12
- * author: GuRongLin
+ * 
  * 记得不要在子线程中使用
  */
 class ToastUtils {

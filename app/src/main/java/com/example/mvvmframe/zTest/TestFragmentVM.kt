@@ -11,7 +11,7 @@ import person.qaszxcwer.appbaseframe.utils.LogUtils
 /**
  *
  * date: 2023/5/12
- * author: GuRongLin
+ * 
  */
 class TestFragmentVM: BaseVMFragment<TestViewModel, FragmentMain2Binding>() {
     override fun getViewBinding(inflater: LayoutInflater): FragmentMain2Binding {

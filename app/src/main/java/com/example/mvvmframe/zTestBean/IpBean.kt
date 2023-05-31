@@ -1,9 +1,9 @@
-package com.example.mvvmframe.zTest
+package com.example.mvvmframe.zTestBean
 
 /**
  *
  * date: 2023/5/8
- * author: GuRongLin
+ * 
  */
 data class IpBean(
     val Country:String,

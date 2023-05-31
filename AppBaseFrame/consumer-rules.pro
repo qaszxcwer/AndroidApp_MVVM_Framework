@@ -1,0 +1,1 @@
+-keepclassmembers class person.qaszxcwer.appbaseframe.hybrid.HybridEvent {*;}
