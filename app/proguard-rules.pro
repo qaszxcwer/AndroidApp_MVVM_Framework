@@ -15,6 +15,7 @@
 
 # 网络请求的数据bean不能混淆，否则json转化会出错
 -keep class com.example.mvvmframe.api.BaseResponse {*;}
+-keep class com.example.mvvmframe.api.BaseListResponse {*;}
 -keep class com.example.mvvmframe.zTestBean.** {*;}
 
 # 和H5交互的方法不能被混淆
