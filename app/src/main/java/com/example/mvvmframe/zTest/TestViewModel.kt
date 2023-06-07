@@ -35,6 +35,7 @@ class TestViewModel: BaseViewModel() {
         launchVMScope {
             val params: HashMap<String, Any> = HashMap()
             params["ip"] = "112.112.11.11"
+            params["key"] = "换成你的"
             RetrofitClient.instance.usualApi.requestIp(params).enqueue(object: BaseNetCallback<IpBean>() {
                 override fun onSuccess(data: IpBean) {
                     ipData.value = data
@@ -56,6 +57,7 @@ class TestViewModel: BaseViewModel() {
         launchVMScope {
             val params: HashMap<String, Any> = HashMap()
             params["surname"] = "公孙"
+            params["key"] = "换成你的"
             RetrofitClient.instance.usualApi.requestNameList("query", params).enqueue(object: BaseNetCallback<BaseListResponse<NameItem>>() {
                 override fun onSuccess(data: BaseListResponse<NameItem>) {
                     nameList.value = data

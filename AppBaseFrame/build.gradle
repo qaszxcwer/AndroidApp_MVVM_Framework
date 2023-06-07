@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
+    namespace 'person.qaszxcwer.appbaseframe'
+
     compileSdk 32
 
     defaultConfig {
         minSdk 19
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
 
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -50,7 +50,8 @@ dependencies {
     api "com.squareup.retrofit2:retrofit:2.9.0"
     api 'com.squareup.retrofit2:converter-gson:2.9.0'
     api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
-    api 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    api "com.squareup.okhttp3:okhttp:4.11.0"
+    api 'com.squareup.okhttp3:logging-interceptor:4.11.0'
     // 图片加载
     api 'com.github.bumptech.glide:glide:4.15.1'
 }

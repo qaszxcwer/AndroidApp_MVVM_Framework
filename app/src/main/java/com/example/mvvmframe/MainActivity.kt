@@ -32,8 +32,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         changeFragment()
         txtTest.text = BuildConfig.FLAVOR
         txtTest.setOnClickListener {
-//            startActivity(Intent(mContext, TestActivity::class.java))
-            startActivity(Intent(mContext, TestWebActivity::class.java))
+            startActivity(Intent(mContext, TestActivity::class.java))
+//            startActivity(Intent(mContext, TestWebActivity::class.java))
 //            changeFragment()
         }
     }

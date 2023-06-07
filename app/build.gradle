@@ -4,6 +4,8 @@ plugins {
 }
 
 android {
+    namespace 'com.example.mvvmframe'
+
     signingConfigs {
         debug {
             storeFile file("KeyTest.jks")

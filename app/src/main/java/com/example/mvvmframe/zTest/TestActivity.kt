@@ -50,15 +50,16 @@ class TestActivity: BaseVMActivity<ActivityMainBinding, TestViewModel>() {
     }
 
     override fun initData() {
-        viewModel.observeIpData(this, {
+        viewModel.observeIpData(this) {
             LogUtils.d("activity收到了ip接口返回")
             LogUtils.d("$it")
-            binding.txtTest.text = "$it"
-        })
-        viewModel.observeNameList(this, {
+//            binding.txtTest.text = "$it"
+        }
+        viewModel.observeNameList(this) {
             LogUtils.d("activity收到了name接口返回")
             LogUtils.d("$it")
-        })
+            binding.txtTest.text = "$it"
+        }
         viewModel.getIp()
         viewModel.getNameList()
     }
