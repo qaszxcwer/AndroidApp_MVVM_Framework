@@ -41,7 +41,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun initData() {
     }
 
-    private var first: Boolean = true
+    private var first: Boolean = false
     private val fragment1 by lazy { TestFragment1() }
     private val fragment2 by lazy { TestFragmentVM() }
 

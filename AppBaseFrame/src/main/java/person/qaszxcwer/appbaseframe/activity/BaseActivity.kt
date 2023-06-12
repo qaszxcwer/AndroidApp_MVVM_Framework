@@ -5,7 +5,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.appjoint2.core.AppJoint2
+import com.example.appjoint2.ILoginAj
 import person.qaszxcwer.appbaseframe.dialog.loading.UsualLoadingDialogUtil
+import person.qaszxcwer.appbaseframe.utils.ToastUtils
 
 /**
  *
@@ -51,7 +54,8 @@ abstract class BaseActivity<T: ViewBinding> : AppCompatActivity() {
     }
 
     protected fun openLogin() {
-        TODO("自行实现跳转登录，这个和业务强相关，就不在框架里面写了")
+        val loginAj = AppJoint2.service(ILoginAj::class.java)
+        loginAj?.gotoLogin(mContext)
     }
 
     /**

@@ -22,3 +22,6 @@
 -keepclassmembers class com.example.mvvmframe.zTest.TestJsInterface {
    public *;
 }
+
+# AppJoint2的接口实现
+-keep class com.example.mvvmframe.zTest.LoginAjImpl {*;}

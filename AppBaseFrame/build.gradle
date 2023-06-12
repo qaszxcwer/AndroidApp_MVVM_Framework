@@ -54,4 +54,6 @@ dependencies {
     api 'com.squareup.okhttp3:logging-interceptor:4.11.0'
     // 图片加载
     api 'com.github.bumptech.glide:glide:4.15.1'
+    // AppJoint2
+    api project(path: ':AppJoint2')
 }

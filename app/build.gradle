@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    // 添加AppJoint2插件
+    id 'com.appjoint2.plugin'
 }
 
 android {
@@ -24,12 +26,12 @@ android {
             v2SigningEnabled true
         }
     }
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.mvvmframe"
-        minSdk 21
-        targetSdk 32
+        minSdk 23
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 

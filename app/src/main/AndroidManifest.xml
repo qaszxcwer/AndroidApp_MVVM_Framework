@@ -35,6 +35,10 @@
             android:name=".zTest.TestResultActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".zTest.TestLoginActivity"
+            android:screenOrientation="portrait" />
+
 
     </application>
 

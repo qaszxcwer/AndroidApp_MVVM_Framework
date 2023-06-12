@@ -40,6 +40,12 @@ class TestViewModel: BaseViewModel() {
                 override fun onSuccess(data: IpBean) {
                     ipData.value = data
                 }
+
+                override fun onFail(t: Throwable): Boolean {
+                    // 制造一个跳转登录的场景
+                    needLogin.value = true
+                    return false
+                }
             })
         }
     }
