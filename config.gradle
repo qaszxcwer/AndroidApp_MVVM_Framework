@@ -1,0 +1,9 @@
+ext {
+    android = [
+            compileSdkVersion = 34,
+            targetSdkVersion = 34,
+            minSdkVersion = 23,
+            versionCode = 1,
+            versionName = "1.0"
+    ]
+}
