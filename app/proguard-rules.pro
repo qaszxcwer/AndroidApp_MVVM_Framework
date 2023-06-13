@@ -24,4 +24,5 @@
 }
 
 # AppJoint2的接口实现
+-keep class com.example.mvvmframe.TestApplication
 -keep class com.example.mvvmframe.zTest.LoginAjImpl {*;}
