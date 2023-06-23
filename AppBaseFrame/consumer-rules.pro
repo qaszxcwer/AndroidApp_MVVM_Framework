@@ -20,3 +20,10 @@
 -if interface * { @retrofit2.http.* public *** *(...); }
 -keep,allowoptimization,allowshrinking,allowobfuscation class <3>
 # Retrofit 结束
+
+# LiveEventBus 开始
+-dontwarn com.jeremyliao.liveeventbus.**
+-keep class com.jeremyliao.liveeventbus.** { *; }
+-keep class androidx.lifecycle.** { *; }
+-keep class androidx.arch.core.** { *; }
+# LiveEventBus 结束
