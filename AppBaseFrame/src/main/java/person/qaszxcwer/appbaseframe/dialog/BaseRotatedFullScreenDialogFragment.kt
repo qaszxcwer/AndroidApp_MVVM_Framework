@@ -17,7 +17,7 @@ import person.qaszxcwer.appbaseframe.utils.DeviceUtils
 /**
  *
  * date: 2023/5/9
- * 
+ * 旋转部分来自https://www.jianshu.com/p/b986df7951a4
  * 可以旋转的全屏对话框样式，然后如果不需要全屏就在xml里面控制自己高度即可
  */
 abstract class BaseRotatedFullScreenDialogFragment<T: ViewBinding>: BaseDialogFragment<T>() {

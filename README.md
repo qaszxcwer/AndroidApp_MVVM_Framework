@@ -30,8 +30,8 @@
 分为：
 1. [Activity](https://github.com/qaszxcwer/AndroidApp_MVVM_Framework/blob/main/doc/Activity.md)
 2. [Fragment](https://github.com/qaszxcwer/AndroidApp_MVVM_Framework/blob/main/doc/Fragment.md)
-3. Dialog
-4. View 自定义view
+3. [Dialog](https://github.com/qaszxcwer/AndroidApp_MVVM_Framework/blob/main/doc/Dialog.md)
+4. [View](https://github.com/qaszxcwer/AndroidApp_MVVM_Framework/blob/main/doc/View.md) 自定义view
 ### VM层 交互桥梁
 分为：
 1. VM
