@@ -11,7 +11,6 @@ import java.lang.ref.WeakReference
 
 /**
  *
- * @author 顾荣林
  * 2023/6/12
  */
 class TestLoginActivity: BaseActivity<ActivityTestLoginBinding>() {
