@@ -28,17 +28,17 @@
 点击超链接查看各个部分的详细文档 todo……
 ### V层 UI部分
 分为：
-1. Activity
+1. [Activity](https://github.com/qaszxcwer/AndroidApp_MVVM_Framework/blob/main/doc/Activity.md)
 2. Fragment
 3. Dialog
-4. View
+4. View 自定义view
 ### VM层 交互桥梁
 分为：
 1. VM
-2. hybrid
+2. hybrid 和H5交互
 ### M层 数据部分
 分为：
-1. net
+1. net 网络请求
 ### 其他
 分为：
 1. extend扩展方法
