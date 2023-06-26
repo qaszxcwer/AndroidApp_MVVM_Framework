@@ -34,8 +34,8 @@
 4. [View](https://github.com/qaszxcwer/AndroidApp_MVVM_Framework/blob/main/doc/View.md) 自定义view
 ### VM层 交互桥梁
 分为：
-1. VM
-2. hybrid 和H5交互
+1. [VM](https://github.com/qaszxcwer/AndroidApp_MVVM_Framework/blob/main/doc/VM.md)
+2. [hybrid](https://github.com/qaszxcwer/AndroidApp_MVVM_Framework/blob/main/doc/Hybrid.md) 和H5交互
 ### M层 数据部分
 分为：
 1. net 网络请求
