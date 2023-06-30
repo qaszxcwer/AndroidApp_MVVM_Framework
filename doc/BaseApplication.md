@@ -1,0 +1,2 @@
+# BaseApplication
+建议作为实际Application的父类，因为里面有整个app的context引用，在网络请求和toast显示方面有用
