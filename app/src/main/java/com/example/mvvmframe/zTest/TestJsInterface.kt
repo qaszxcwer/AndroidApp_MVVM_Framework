@@ -25,14 +25,6 @@ class TestJsInterface(private val activity: AppCompatActivity, private val fragm
             LogUtils.e("H5消息不得为空")
             return null
         }
-        val event = HybridEvent(jsString)
-        LogUtils.d("event转化的json是：${event.toJsonString()}")
-        val handler: BaseHybridEventHandler? = HybridEventHandlerManager[event.operationType]
-        handler?.let {
-            LogUtils.d("处理event的是：$it")
-            return it.preHandleEvent(activity, fragment, event.params)
-        }
-        LogUtils.e("找不到对应的handler处理H5消息")
-        return null
+        return HybridEventHandlerManager.handleJsEvent(jsString, activity, fragment)
     }
 }

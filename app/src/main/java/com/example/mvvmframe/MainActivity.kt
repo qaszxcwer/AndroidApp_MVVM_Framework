@@ -7,6 +7,7 @@ import com.example.mvvmframe.databinding.ActivityMainBinding
 import com.example.mvvmframe.zTest.TestActivity
 import com.example.mvvmframe.zTest.TestFragment1
 import com.example.mvvmframe.zTest.TestFragmentVM
+import com.example.mvvmframe.zTest.TestWebActivity
 import com.example.mvvmframe.zTest.eventBus.LoginEvent
 import com.jeremyliao.liveeventbus.LiveEventBus
 import person.qaszxcwer.appbaseframe.activity.BaseActivity
@@ -34,8 +35,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         changeFragment()
         txtTest.text = BuildConfig.FLAVOR
         txtTest.setOnClickListener {
-            startActivity(Intent(mContext, TestActivity::class.java))
-//            startActivity(Intent(mContext, TestWebActivity::class.java))
+//            startActivity(Intent(mContext, TestActivity::class.java))
+            startActivity(Intent(mContext, TestWebActivity::class.java))
 //            changeFragment()
         }
     }

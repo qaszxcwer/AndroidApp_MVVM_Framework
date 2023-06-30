@@ -1,6 +1,8 @@
 package person.qaszxcwer.appbaseframe.hybrid
 
 import androidx.activity.result.ActivityResult
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 
 /**
  *
@@ -16,6 +18,21 @@ object HybridEventHandlerManager:LinkedHashMap<String, BaseHybridEventHandler>()
         put(handler.getOperationType(), handler)
     }
 
+    /**
+     * 处理H5发来的信息
+     */
+    fun handleJsEvent(jsString: String, activity: AppCompatActivity, fragment: Fragment? = null): String? {
+        val event = HybridEvent(jsString)
+        val handler: BaseHybridEventHandler? = HybridEventHandlerManager[event.operationType]
+        handler?.let {
+            return it.preHandleEvent(activity, fragment, event.params)
+        }
+        return null
+    }
+
+    /**
+     * 收到activityResult之后调用，内部进行分发
+     */
     fun onLaunchActivityResult(launchCode: Int, result: ActivityResult) {
         if (launchCode <= 0) {
             return

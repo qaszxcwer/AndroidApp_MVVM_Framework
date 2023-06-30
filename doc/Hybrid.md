@@ -1,5 +1,6 @@
 # Hybrid
 用于APP和H5进行交互，分为2个部分：事件管理、事件接口
+
 整体的工作流程如下：
 1. webview使用addJavascriptInterface()方法，添加了一堆方法供H5页面调用
 2. H5调用了其中一个方法，比如说是app/zTest/TestJsInterface中的jsEvent()，数据可以转化为HybridEvent
@@ -13,6 +14,7 @@
 2. HybridEvent
 3. HybridEventHandlerManager
 4. NativeEventHandler
+
 1、2、3是处理H5向APP发来的数据，4是APP向H5发送数据
 
 ### BaseHybridEventHandler
