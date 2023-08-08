@@ -80,4 +80,16 @@ class TestViewModel: BaseViewModel() {
             })
         }
     }
+
+    private val testSameVM by lazy {
+        MutableLiveData<String>()
+    }
+
+    fun observeTestSameVM(owner: LifecycleOwner, observer: Observer<String>) {
+        testSameVM.observe(owner, observer)
+    }
+
+    fun testSameViewModel(msg: String) {
+        testSameVM.value = msg
+    }
 }

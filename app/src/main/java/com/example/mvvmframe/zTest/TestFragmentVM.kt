@@ -1,6 +1,7 @@
 package com.example.mvvmframe.zTest
 
 import android.view.LayoutInflater
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.mvvmframe.databinding.FragmentMain2Binding
@@ -46,5 +47,10 @@ class TestFragmentVM: BaseVMFragment<TestViewModel, FragmentMain2Binding>() {
             binding.txtTest.text = "$it"
         })
         viewModel.getIp()
+        viewModel.testSameViewModel(this.toString())
+    }
+
+    override fun getVmOwnerActivity(): FragmentActivity? {
+        return activity
     }
 }

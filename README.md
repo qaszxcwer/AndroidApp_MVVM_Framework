@@ -25,7 +25,7 @@
 
 # 框架介绍
 ## 简介
-点击超链接查看各个部分的详细文档 todo……
+点击超链接查看各个部分的详细文档
 ### V层 UI部分
 分为：
 1. [Activity](https://github.com/qaszxcwer/AndroidApp_MVVM_Framework/blob/main/doc/Activity.md)

@@ -1,5 +1,6 @@
 package person.qaszxcwer.appbaseframe.fragment
 
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import person.qaszxcwer.appbaseframe.vm.BaseViewModel
@@ -18,9 +19,21 @@ abstract class BaseVMFragment<VM: BaseViewModel, T: ViewBinding>: BaseFragment<T
         initVM()
     }
 
+    /**
+     * 当需要fragment和activity共用同一个viewModel时，重写此方法，返回activity
+     */
+    protected open fun getVmOwnerActivity() : FragmentActivity? {
+        return null
+    }
+
     private fun initVM() {
         getViewModel().let {
-            viewModel = ViewModelProvider(this)[it]
+            getVmOwnerActivity()?.let { act ->
+                viewModel = ViewModelProvider(act)[it]
+            }
+            if (!this::viewModel.isInitialized) {
+                viewModel = ViewModelProvider(this)[it]
+            }
             viewModel.observeShowDialog(this, { bool ->
                 if (bool != null && bool) {
                     showLoading()

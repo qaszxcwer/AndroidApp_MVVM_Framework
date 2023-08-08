@@ -7,16 +7,18 @@ import com.example.mvvmframe.databinding.ActivityMainBinding
 import com.example.mvvmframe.zTest.TestActivity
 import com.example.mvvmframe.zTest.TestFragment1
 import com.example.mvvmframe.zTest.TestFragmentVM
+import com.example.mvvmframe.zTest.TestViewModel
 import com.example.mvvmframe.zTest.TestWebActivity
 import com.example.mvvmframe.zTest.eventBus.LoginEvent
 import com.jeremyliao.liveeventbus.LiveEventBus
 import person.qaszxcwer.appbaseframe.activity.BaseActivity
+import person.qaszxcwer.appbaseframe.activity.BaseVMActivity
 import person.qaszxcwer.appbaseframe.extend.immerse
 import person.qaszxcwer.appbaseframe.extend.notNull
 import person.qaszxcwer.appbaseframe.utils.LogUtils
 import person.qaszxcwer.appbaseframe.utils.ToastUtils
 
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+class MainActivity : BaseVMActivity<ActivityMainBinding, TestViewModel>() {
     // by lazy形式示例，可用binding.txtTest代替
     private val txtTest: TextView by lazy { findViewById<TextView>(R.id.txtTest) }
 
@@ -47,6 +49,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             .observe(this) {
                 ToastUtils.showLong("收到了登录消息${it.content}")
             }
+        viewModel.observeTestSameVM(this) {
+            ToastUtils.showLong("收到了VM中转的fragment消息${it}")
+        }
+    }
+
+    override fun getViewModel(): Class<TestViewModel> {
+        return TestViewModel::class.java
     }
 
     private var first: Boolean = false
